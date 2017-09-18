@@ -1,0 +1,5 @@
+C:\Users\muhammad.siddiqui\Documents\Visual Studio 2015\Projects\Cartegraph\Cartegraph.Core\bin\Debug\Cartegraph.Core.dll
+C:\Users\muhammad.siddiqui\Documents\Visual Studio 2015\Projects\Cartegraph\Cartegraph.Core\bin\Debug\Cartegraph.Core.pdb
+C:\Users\muhammad.siddiqui\Documents\Visual Studio 2015\Projects\Cartegraph\Cartegraph.Core\obj\Debug\Cartegraph.Core.csprojResolveAssemblyReference.cache
+C:\Users\muhammad.siddiqui\Documents\Visual Studio 2015\Projects\Cartegraph\Cartegraph.Core\obj\Debug\Cartegraph.Core.dll
+C:\Users\muhammad.siddiqui\Documents\Visual Studio 2015\Projects\Cartegraph\Cartegraph.Core\obj\Debug\Cartegraph.Core.pdb

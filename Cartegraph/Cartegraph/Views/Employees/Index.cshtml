@@ -1,0 +1,36 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+   <div id="AddIssues"><br/>
+<div>
+
+    <div ng-controller="Test">
+        <p>selected item is : {{selectedItem}}</p>
+        <select ng-model="selectedItem">
+            <option ng-repeat="item in items" value="{{item}}">{{item}}</option>
+        </select>
+    </div>
+    </div>
+    <br/>
+    <div>Enter the details of the issue (be specific):</div>
+    <div><input type="text" id="IssueDetails" /></div>
+    <br/>
+    <p>Location of Issue:</p>
+    <div><input type="text" id="IssueLocation" /></div>
+    <div>&nbsp;<br/></div>
+    <p>Employee:</p>
+    <div><input type="text" id="IssueReporter" /></div>
+</div>
+    </div>
+</body>
+</html>

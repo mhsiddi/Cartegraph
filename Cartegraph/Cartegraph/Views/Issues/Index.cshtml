@@ -1,0 +1,98 @@
+﻿
+
+@{
+    Layout = null;
+}
+
+
+<link rel="stylesheet" type="text/css" href="~/Content/css/main.css" />
+<link rel="stylesheet" type="text/css" href="~/Content/css/font-awesome.min.css" />
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+    <title></title>
+
+</head>
+
+<body>
+    <h3 id="header">Issues</h3>
+
+
+
+    
+        <table>
+            <tr>You can view issues or create issues here...</tr>
+        </table>
+        <table></table>
+        @*<p>To Create Issues-</p>*@
+
+        <table align="center">
+            <tr><th>
+        <input type="button" value="I want to report an issue." onclick="@("window.location.href='" + @Url.Action("GetCreateView", "Issues") + "'");" /><br />
+        
+                </th>
+            <th>
+    
+  
+        <input type="button" value="I want to view current issues" onclick="@("window.location.href='" + @Url.Action("GetViewIssues", "Issues") + "'");" /></th></tr>
+    
+    </table>
+
+    <br/>
+
+   
+
+    
+    
+</body>
+<script type="text/javascript">
+    var app = angular.module('app', []);
+    app.controller('Test', function ($scope) {
+        $scope.items = ['one', 'two', 'three', 'four']
+    });
+
+  
+    $(document).ready(function () {
+
+        
+        $('#createIssueBtn').bind("click", function () {
+            $.ajax({
+
+                url: '@Url.Action("OpenPopUp", "Issues")',
+                dataType: 'html',
+                success: function (html) {
+                    $('#PopUpDiv').html(html);
+                }
+            }
+        )
+            $.ajax({
+
+                type: "GET",
+                dataType: "json",
+                url: '@Url.Action("GetIssueTypes", "Issues")',
+                success: function (data) {
+                
+                    $.each(data.IssueTypes, function (key, value) {
+
+                        $("#selectIssueType").append(
+                            $("<option></option>")
+                                .text(item.IssueType)
+                                .val(item.IssueID)
+                            )
+                    })
+                }
+            })
+
+        })
+
+      
+
+    })
+</script>
+</html>
+
+

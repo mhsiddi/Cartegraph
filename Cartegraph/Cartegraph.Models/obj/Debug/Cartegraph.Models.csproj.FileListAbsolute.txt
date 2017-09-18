@@ -1,0 +1,7 @@
+C:\Users\muhammad.siddiqui\Documents\Visual Studio 2015\Projects\Cartegraph\Cartegraph.Models\bin\Debug\Cartegraph.Models.dll
+C:\Users\muhammad.siddiqui\Documents\Visual Studio 2015\Projects\Cartegraph\Cartegraph.Models\bin\Debug\Cartegraph.Models.pdb
+C:\Users\muhammad.siddiqui\Documents\Visual Studio 2015\Projects\Cartegraph\Cartegraph.Models\bin\Debug\Newtonsoft.Json.dll
+C:\Users\muhammad.siddiqui\Documents\Visual Studio 2015\Projects\Cartegraph\Cartegraph.Models\bin\Debug\Newtonsoft.Json.xml
+C:\Users\muhammad.siddiqui\Documents\Visual Studio 2015\Projects\Cartegraph\Cartegraph.Models\obj\Debug\Cartegraph.Models.csprojResolveAssemblyReference.cache
+C:\Users\muhammad.siddiqui\Documents\Visual Studio 2015\Projects\Cartegraph\Cartegraph.Models\obj\Debug\Cartegraph.Models.dll
+C:\Users\muhammad.siddiqui\Documents\Visual Studio 2015\Projects\Cartegraph\Cartegraph.Models\obj\Debug\Cartegraph.Models.pdb

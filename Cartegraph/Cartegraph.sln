@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cartegraph", "Cartegraph\Cartegraph.csproj", "{C86AC63A-AF18-4286-90FF-CE368ECB2FCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cartegraph.Data.Repository", "Cartegraph.Data.Repository\Cartegraph.Data.Repository.csproj", "{1B37BE79-C608-4E87-8D79-B5B891564054}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cartegraph.Core", "Cartegraph.Core\Cartegraph.Core.csproj", "{66083C19-11B3-4A52-A769-7F1E55484598}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cartegraph.Business", "Cartegraph.Business\Cartegraph.Business.csproj", "{547F9068-2AFA-4015-AC19-7D5D5998898A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cartegraph.Models", "Cartegraph.Models\Cartegraph.Models.csproj", "{1E13FB39-9E85-4831-8D3D-9D67F5D3AF45}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C86AC63A-AF18-4286-90FF-CE368ECB2FCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C86AC63A-AF18-4286-90FF-CE368ECB2FCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C86AC63A-AF18-4286-90FF-CE368ECB2FCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C86AC63A-AF18-4286-90FF-CE368ECB2FCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B37BE79-C608-4E87-8D79-B5B891564054}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B37BE79-C608-4E87-8D79-B5B891564054}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B37BE79-C608-4E87-8D79-B5B891564054}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B37BE79-C608-4E87-8D79-B5B891564054}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66083C19-11B3-4A52-A769-7F1E55484598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66083C19-11B3-4A52-A769-7F1E55484598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66083C19-11B3-4A52-A769-7F1E55484598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66083C19-11B3-4A52-A769-7F1E55484598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{547F9068-2AFA-4015-AC19-7D5D5998898A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{547F9068-2AFA-4015-AC19-7D5D5998898A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{547F9068-2AFA-4015-AC19-7D5D5998898A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{547F9068-2AFA-4015-AC19-7D5D5998898A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E13FB39-9E85-4831-8D3D-9D67F5D3AF45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E13FB39-9E85-4831-8D3D-9D67F5D3AF45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E13FB39-9E85-4831-8D3D-9D67F5D3AF45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E13FB39-9E85-4831-8D3D-9D67F5D3AF45}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

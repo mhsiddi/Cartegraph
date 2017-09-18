@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewBag.Title = "CreateIssues";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/css/main.css" />
+<link rel="stylesheet" type="text/css" href="~/Content/css/font-awesome.min.css" />
+<!DOCTYPE html>
+<html ng-app="Cartegraph">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+    <title></title>
+
+</head>
+<body>
+    <h2 id="header">Create Issues</h2>
+    <br /><br /><br />
+    <div id="AddIssues">
+        <br />
+        <div>
+            <label>Issue Type: (Pick One)*</label>
+            <div ng-controller="IssueTypes">
+                <select id="issueTypeSelect" ng-model="issueTypeModel" ng-required="required">
+                    <option ng-repeat="issue in issueTypes" value="{{issue.IssueID}}">{{issue.IssueType}}</option>
+                </select>
+            </div>
+        </div>
+        <br />
+        <label>Enter the details of the issue (be specific):*</label>
+        <div><input type="text" id="IssueDetails" required/></div>
+        <br />
+        <label>Location of Issue: (Enter City)*</label>
+        <div><input type="text" id="IssueLocation" required/></div>
+        <br />
+        <label>Employee: (Pick one)*</label>
+        <div ng-controller="Employees">
+            <select id="IssueReporter" ng-model="employeesModel" ng-required="required">
+                <option ng-repeat="emp in employees" value="{{emp.EmployeeID}}">{{emp.FullNameandID}}</option>
+            </select>
+        </div><br/>
+        <div><i>Note: If you are not in the Employee list, you might not be in our system yet.</i></div>
+        <br />
+        <div style="border: 1px;">
+        <label>Citizen Info:</label>
+        <div>First Name:* </div>
+        <input type="text" id="CFirst" /><br/>
+        <br/><div>Last Name:* </div>
+        <input type="text" id="CLast" /><br/>
+        <br/><div>Email:* </div>
+        <input type="email" placeholder="Enter your email" id="CEmail" /><br/>
+        <div>Phone:* </div>
+        <input type="text" id="CPhone"/>
+        <div><br/>
+            </div>
+        <input type="button" id="CreateIssue" value="Submit Issue" />
+            <input style="text-align:right;" type="button" value="I want to view current issues" onclick="@("window.location.href='" + @Url.Action("GetViewIssues", "Issues") + "'");" />
+        </div>
+    </div>
+    <div id="successMessage" style="text-align:center" hidden>
+        Your issue has been submitted! <br/><input type="button" value=" Click here to view" onclick="@("window.location.href='" + @Url.Action("GetViewIssues", "Issues") + "'");" />
+    </div>
+    <div id="failMessage" style="text-align:center" hidden>
+        Whoops! Something went wrong.
+    </div>
+</body>
+
+<script>
+
+    var app = angular.module('Cartegraph', []);
+    app.controller('IssueTypes', function IssueTypesController($scope, $http) {
+        
+        var url = '@Url.Action("GetIssueTypes", "Issues")';
+        $http.get(url).then(function (response) {
+
+            var _data = angular.fromJson(response);
+            $scope.issueTypes = _data.data;
+        })
+    })
+
+    app.controller('Employees', function EmployeesController($scope, $http) {
+
+        var url = '@Url.Action("GetAllEmployees", "Employees")';
+        $http.get(url).then(function (response) {
+
+            var _data = angular.fromJson(response);
+            $scope.employees = _data.data;
+        })
+
+    })
+
+
+    $('#CreateIssue').bind('click', function () {
+        
+        var IssueType= $('#issueTypeSelect').val(); 
+        var Details= $('#IssueDetails').val();
+        var Location = $('#IssueLocation').val();
+        var ReportedBy = $('#IssueReporter').val();
+        var CFirst = $('#CFirst').val();
+        var CLast = $('#CLast').val();
+        var CEmail = $('#CEmail').val();
+        var CPhone = $('#CPhone').val();
+
+            $.ajax({
+
+                type: "POST",
+                url: '@Url.Action("CreateIssue", "Issues")',
+                data: { 'IssueType': IssueType, 'Details': Details, 'Location': Location, 'ReportedBy': ReportedBy, 'CFirst' : CFirst, 'CLast': CLast, 'CEmail': CEmail, 'CPhone':CPhone },
+                success: function (response) {
+                    $('#successMessage').show();
+                }
+            })
+        
+
+        })
+
+</script>
+</html>

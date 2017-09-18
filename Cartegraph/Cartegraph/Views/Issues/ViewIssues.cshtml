@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "ViewIssues";
+}
+
+
+
+@*<link rel="stylesheet" type="text/css" href="~/Content/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/font-awesome.min.css" />*@
+<!DOCTYPE html>
+<html ng-app="CartegraphViewGrid">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/ng-grid.js"></script>
+
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="~/Content/ng-grid.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/main.css"
+
+</head>
+<body ng-controller="CurrentIssues">
+    <h2 id="header">Current Issues</h2>
+    <br /><br /><br /><br /><br />
+    <h1>Here are all the current issues...</h1><br />
+    <p><i>Note: You can click the column headers to change the ascending / descending order.</i></p>
+
+    <div class="gridStyle ngGrid" ng-grid="gridOptions" id="issuesGrid">
+    </div>
+    <br />
+    <div><input type="button" value="Create Issue" onclick="@("window.location.href='" + @Url.Action("GetCreateView", "Issues") + "'");" style="text-align: right" /></div>
+</body>
+<script type="text/javascript">
+
+    $('#issuesGrid').click(function () {
+
+        issuesGrid.show();
+    })
+    var app = angular.module('CartegraphViewGrid', ['ngGrid']);
+    app.controller('CurrentIssues', function ($scope, $http) {
+
+        var url = '@Url.Action("GetAllIssues", "Issues")';
+        $http.get(url).then(function (response) {
+
+            var _data = angular.fromJson(response);
+            $scope.issues = _data.data;
+
+
+        })
+
+
+        $scope.gridOptions = {
+
+            data: 'issues',
+            columnDefs: [
+            { field: 'IssueID', displayName: 'Issue ID' },
+            { field: 'IssueType', displayName: 'Issue Type' },
+            { field: 'Details', displayName: 'Details' },
+            { field: 'Location', displayName: 'Location' },
+            { field: 'EmployeeName', displayName: 'Reported By' },
+            { field: 'CitizenName', displayName: 'Citizen Name' },
+            { field: 'CitizenEmail', diplayName: 'Citizen Email' },
+            { field: 'CitizenPhone', displayName: 'Citizen Phone' }
+            ]
+        };
+
+    });
+</script>
